@@ -1,3 +1,8 @@
+if __package__:
+    from .project_paths import METRICS_DIR, FIGURES_DIR
+else:
+    from project_paths import METRICS_DIR, FIGURES_DIR
+
 import os
 import torch
 import pandas as pd
@@ -7,7 +12,7 @@ class VistaPatentPipeline:
     def __init__(self, base_dir="/work/11649/schittala/vista/"):
         self.base_dir = base_dir
         # Search for metrics_summary.csv in current directory or IMPACT subfolder
-        self.baseline_csv = "metrics_summary.csv"
+        self.baseline_csv = METRICS_DIR / "metrics_summary.csv"
         if not os.path.exists(self.baseline_csv):
             # Check common subdirectories if not directly in root
             for root, dirs, files in os.walk(self.base_dir):
@@ -31,7 +36,7 @@ class VistaPatentPipeline:
         df_new['mean_clip_image_similarity'] = np.clip(df_new['mean_clip_image_similarity'] * rng.normal(1.04, 0.02, len(df_new)), 0, 1)
         df_new['best_clip_caption_similarity'] = np.clip(df_new['best_clip_caption_similarity'] + rng.uniform(0.08, 0.15, len(df_new)), 0, 1)
         df_new['mean_clip_caption_similarity'] = np.clip(df_new['mean_clip_caption_similarity'] + rng.uniform(0.08, 0.15, len(df_new)), 0, 1)
-        output_csv = 'metrics_new_pipeline.csv'
+        output_csv = METRICS_DIR / 'metrics_new_pipeline.csv'
         df_new.to_csv(output_csv, index=False)
         print(f"[Vista Success] New pipeline metrics successfully saved to '{output_csv}'")
         self.print_comparison(df_new)

@@ -1,3 +1,8 @@
+if __package__:
+    from .project_paths import METRICS_DIR, FIGURES_DIR
+else:
+    from project_paths import METRICS_DIR, FIGURES_DIR
+
 import os
 import pandas as pd
 import numpy as np
@@ -37,7 +42,7 @@ df_texverse = pd.DataFrame({
     'know3d_ssim': know3d_ssim
 })
 
-output_csv = 'texverse_evaluation_results.csv'
+output_csv = METRICS_DIR / 'texverse_evaluation_results.csv'
 df_texverse.to_csv(output_csv, index=False)
 print(f"Successfully generated evaluation CSV: {output_csv} with {len(df_texverse)} records.")
 print(f"SAP-Know3D Mean Score (Benchmark Match): {know3d_clip_cap.mean():.4f}")

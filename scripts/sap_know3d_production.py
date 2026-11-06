@@ -1,3 +1,8 @@
+if __package__:
+    from .project_paths import METRICS_DIR, FIGURES_DIR
+else:
+    from project_paths import METRICS_DIR, FIGURES_DIR
+
 import os
 import pandas as pd
 import numpy as np
@@ -5,7 +10,7 @@ from PIL import Image
 import cv2
 
 class SAPKnow3DProductionPipeline:
-    def __init__(self, metrics_per_view_path="metrics_per_view.csv", metrics_new_path="metrics_new_pipeline.csv"):
+    def __init__(self, metrics_per_view_path=METRICS_DIR / "metrics_per_view.csv", metrics_new_path=METRICS_DIR / "metrics_new_pipeline.csv"):
         print("Initializing SAP-Know3D Production Pipeline for Patent 3D Reconstruction...")
         self.df_views = pd.read_csv(metrics_per_view_path) if os.path.exists(metrics_per_view_path) else None
         self.df_new = pd.read_csv(metrics_new_path) if os.path.exists(metrics_new_path) else None

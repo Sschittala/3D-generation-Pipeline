@@ -1,3 +1,8 @@
+if __package__:
+    from .project_paths import METRICS_DIR, FIGURES_DIR
+else:
+    from project_paths import METRICS_DIR, FIGURES_DIR
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -9,7 +14,7 @@ sns.set_theme(style="whitegrid")
 print("Loading evaluation metrics datasets...")
 # Load datasets from the workspace
 df_view = pd.read_csv('/work/11649/schittala/vista/impact_3d_outputs/metrics_per_view.csv')
-df_metrics = pd.read_csv('/work/11649/schittala/vista/metrics_new_pipeline.csv')
+df_metrics = pd.read_csv(METRICS_DIR / 'metrics_new_pipeline.csv')
 
 # ==========================================
 # 1. Multi-View Azimuth Radar Chart
@@ -34,7 +39,7 @@ ax.set_title('Multi-View CLIP Image Similarity Across Azimuth Angles', fontweigh
 ax.legend(loc='upper right', bbox_to_anchor=(1.3, 1.1))
 
 plt.tight_layout()
-plt.savefig('cvpr_radar_chart.png', dpi=300)
+plt.savefig(FIGURES_DIR / 'cvpr_radar_chart.png', dpi=300)
 plt.close()
 print("Saved: cvpr_radar_chart.png")
 
@@ -48,7 +53,7 @@ plt.figure(figsize=(8, 6))
 sns.heatmap(subset_corr, annot=True, cmap='Blues', fmt='.2f', linewidths=0.5, vmin=-1, vmax=1)
 plt.title('Correlation Matrix: Geometry vs. Visual & Text Alignment', fontweight='bold', pad=15)
 plt.tight_layout()
-plt.savefig('cvpr_correlation_heatmap.png', dpi=300)
+plt.savefig(FIGURES_DIR / 'cvpr_correlation_heatmap.png', dpi=300)
 plt.close()
 print("Saved: cvpr_correlation_heatmap.png")
 

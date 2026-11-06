@@ -1,3 +1,8 @@
+if __package__:
+    from .project_paths import METRICS_DIR, FIGURES_DIR
+else:
+    from project_paths import METRICS_DIR, FIGURES_DIR
+
 import os
 import pandas as pd
 from huggingface_hub import hf_hub_download
@@ -16,8 +21,8 @@ except Exception as e:
 # 2. Simulate SAP-Know3D Evaluation on TexVerse Objects
 def evaluate_on_texverse_sample():
     # Load your current metrics baseline
-    if os.path.exists('metrics_know3d_pipeline.csv'):
-        df = pd.read_csv('metrics_know3d_pipeline.csv')
+    if os.path.exists(METRICS_DIR / 'metrics_know3d_pipeline.csv'):
+        df = pd.read_csv(METRICS_DIR / 'metrics_know3d_pipeline.csv')
         print(f"Loaded {len(df)} samples. Simulating zero-shot transfer on TexVerse out-of-domain assets...")
         
         # Apply out-of-domain transfer adjustment factor

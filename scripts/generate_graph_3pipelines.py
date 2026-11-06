@@ -1,3 +1,8 @@
+if __package__:
+    from .project_paths import METRICS_DIR, FIGURES_DIR
+else:
+    from project_paths import METRICS_DIR, FIGURES_DIR
+
 # Let's generate a multi-pipeline comparative visualization script using texverse_evaluation_results.csv
 import os
 import pandas as pd
@@ -8,7 +13,7 @@ import numpy as np
 sns.set_theme(style="whitegrid")
 
 # Load texverse evaluation results
-df = pd.read_csv('texverse_evaluation_results.csv')
+df = pd.read_csv(METRICS_DIR / 'texverse_evaluation_results.csv')
 
 # Compute means across the three pipelines for a comparative bar chart
 metrics_names = ['CLIP Image Sim', 'CLIP Caption Sim', 'Structural SSIM']
@@ -46,6 +51,6 @@ autolabel(rects2)
 autolabel(rects3)
 
 plt.tight_layout()
-plt.savefig('texverse_multi_pipeline_bar_comparison.png', dpi=300)
+plt.savefig(FIGURES_DIR / 'texverse_multi_pipeline_bar_comparison.png', dpi=300)
 plt.close()
 print("Successfully generated texverse_multi_pipeline_bar_comparison.png")

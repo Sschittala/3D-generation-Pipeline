@@ -1,10 +1,15 @@
+if __package__:
+    from .project_paths import METRICS_DIR, FIGURES_DIR
+else:
+    from project_paths import METRICS_DIR, FIGURES_DIR
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load datasets
 df_base = pd.read_csv('/work/11649/schittala/vista/impact_3d_outputs/metrics_summary.csv')
-df_new = pd.read_csv('metrics_new_pipeline.csv')
+df_new = pd.read_csv(METRICS_DIR / 'metrics_new_pipeline.csv')
 
 # Set plotting style for CVPR paper quality
 plt.figure(figsize=(12, 5))
@@ -29,5 +34,5 @@ plt.ylabel('Density', fontsize=10)
 plt.legend(frameon=True)
 
 plt.tight_layout()
-plt.savefig('cvpr_metrics_comparison.png', dpi=300)
+plt.savefig(FIGURES_DIR / 'cvpr_metrics_comparison.png', dpi=300)
 print("Publication figure successfully generated: cvpr_metrics_comparison.png")

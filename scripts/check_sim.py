@@ -1,7 +1,12 @@
+if __package__:
+    from .project_paths import METRICS_DIR, FIGURES_DIR
+else:
+    from project_paths import METRICS_DIR, FIGURES_DIR
+
 import pandas as pd
 
 # Load the new pipeline metrics
-df = pd.read_csv('metrics_new_pipeline.csv')
+df = pd.read_csv(METRICS_DIR / 'metrics_new_pipeline.csv')
 
 # Sort by combined text and image similarity to find the best overall matching samples
 df['combined_match_score'] = (df['best_clip_caption_similarity'] + df['best_clip_image_similarity']) / 2
