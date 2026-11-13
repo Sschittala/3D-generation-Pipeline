@@ -1,0 +1,6 @@
+selection,patent_id,filename,vertices,faces,connected_components,boundary_edges,nonmanifold_edges,degenerate_faces,watertight_edges,largest_component_vertex_fraction
+Fewest components,D0910058,USD0910058-20210209-D00001.TIF,7199,13536,6,850,0,0,False,0.5135435477149604
+Median component count,D0938702,USD0938702-20211221-D00005.TIF,5234,7012,205,3168,0,0,False,0.15055406954528086
+Most components,D0927435,USD0927435-20210810-D00009.TIF,45694,44898,4159,38448,0,6,False,0.024116951897404475
+Most connected components,D0927435,USD0927435-20210810-D00009.TIF,45694,44898,4159,38448,0,6,False,0.024116951897404475
+Largest boundary-edge / face ratio,D0927435,USD0927435-20210810-D00004.TIF,1449,1159,185,1369,0,0,False,0.06694271911663216

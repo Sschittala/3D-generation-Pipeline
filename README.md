@@ -71,7 +71,19 @@ and TexVerse generates random scores. Original CSVs are preserved.
 See the generated Markdown for exclusions, missing values, and required inputs
 for a real comparison. `--metrics-dir` and `--output-dir` accept alternative paths.
 
-## Sketch-to-3D experiment
+## Archive analysis tables and figures
+
+Run `python3 scripts/build_project_analysis.py` with NumPy and Matplotlib to
+generate `reports/project_analysis/`: dataset inventory, metric completeness,
+recorded score distributions, recomputed GLB topology, and geometry inspection
+figures. See that directory's README for selection rules, captions, provenance,
+and limitations. Tables are available as Markdown and LaTeX; figures as PNG/SVG.
+The original sketches are missing, so the geometry figures cannot establish
+sketch fidelity or verify semantic reconstruction failures.
+
+Topology checks: `python3 -m unittest discover -s tests -p test_project_analysis.py`.
+
+## Sketch-to-3D experiment details
 
 See [experiment setup and current limitations](experiments/sketch_to_3d/README.md)
 for the imported TRELLIS audit and new staged experiment runner.
