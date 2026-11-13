@@ -4,3 +4,4 @@ __pycache__/
 SketchDream/
 TRELLIS/
 data/metrics/TRELLIS_Complete_Results/
+experiments/sketch_to_3d/runs/

@@ -57,3 +57,8 @@ reads `data/metrics/metrics_per_view.csv`.
 The existing TexVerse CSV generator uses random synthetic scores, and the Vista
 and Know3D evaluation scripts adjust existing scores. These outputs should be
 interpreted according to those implementations.
+
+## Sketch-to-3D comparison
+
+See [experiment setup and current limitations](experiments/sketch_to_3d/README.md)
+for the imported TRELLIS audit and new staged experiment runner.
