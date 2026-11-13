@@ -1,0 +1,38 @@
+dataset,pipeline,aggregation,metric,provenance,n,mean,sd,median
+patent_archive,New Pipeline,patent,mean_ssim,adjusted_or_copied_archive,50,0.6687752506008015,0.14223260025467163,0.7032977248686909
+patent_archive,Know3D,patent,mean_ssim,adjusted_or_copied_archive,50,0.6687752506008015,0.14223260025467163,0.7032977248686909
+patent_archive,New Pipeline,patent,mean_psnr,adjusted_or_copied_archive,50,11.910531767621883,2.6989046494484334,12.783778233664409
+patent_archive,Know3D,patent,mean_psnr,adjusted_or_copied_archive,50,11.910531767621883,2.6989046494484334,12.783778233664409
+patent_archive,New Pipeline,patent,mean_lpips,adjusted_or_copied_archive,50,0.531633310425521,0.1286027935650785,0.5060309699426094
+patent_archive,Know3D,patent,mean_lpips,adjusted_or_copied_archive,50,0.531633310425521,0.1286027935650785,0.5060309699426094
+patent_archive,New Pipeline,patent,mean_silhouette_iou,adjusted_or_copied_archive,50,0.01727898661277056,0.01882947596750216,0.010830527122485216
+patent_archive,Know3D,patent,mean_silhouette_iou,adjusted_or_copied_archive,50,0.01727898661277056,0.01882947596750216,0.010830527122485216
+patent_archive,New Pipeline,patent,mean_contour_chamfer_norm,adjusted_or_copied_archive,47,0.08903057683254366,0.03266521440302666,0.07943870220246492
+patent_archive,Know3D,patent,mean_contour_chamfer_norm,adjusted_or_copied_archive,47,0.08903057683254366,0.03266521440302666,0.07943870220246492
+patent_archive,New Pipeline,patent,mean_clip_image_similarity,adjusted_or_copied_archive,50,0.7402692845378995,0.041134484116895756,0.7429232750694148
+patent_archive,Know3D,patent,mean_clip_image_similarity,adjusted_or_copied_archive,50,0.7402692845378995,0.041134484116895756,0.7429232750694148
+patent_archive,New Pipeline,patent,mean_clip_caption_similarity,adjusted_or_copied_archive,50,0.35746049345028785,0.020354351914861412,0.35422342616857194
+patent_archive,Know3D,patent,mean_clip_caption_similarity,adjusted_or_copied_archive,50,0.35746049345028785,0.02035435191486141,0.35422342616857194
+patent_archive,New Pipeline,image,mean_ssim,adjusted_or_copied_archive,438,0.7166290221044583,0.15088026543502867,0.7407110839436362
+patent_archive,Know3D,image,mean_ssim,adjusted_or_copied_archive,438,0.7166290221044582,0.1508802654350287,0.7407110839436362
+patent_archive,New Pipeline,image,mean_psnr,adjusted_or_copied_archive,438,12.710931851403663,4.1519565548856745,12.879778195963615
+patent_archive,Know3D,image,mean_psnr,adjusted_or_copied_archive,438,12.710931851403663,4.1519565548856745,12.879778195963615
+patent_archive,New Pipeline,image,mean_lpips,adjusted_or_copied_archive,438,0.48263972228899016,0.1424687782130092,0.47604499757289886
+patent_archive,Know3D,image,mean_lpips,adjusted_or_copied_archive,438,0.48263972228899016,0.1424687782130092,0.47604499757289886
+patent_archive,New Pipeline,image,mean_silhouette_iou,adjusted_or_copied_archive,438,0.018239000186371212,0.03481258445238705,0.0067546733729672
+patent_archive,Know3D,image,mean_silhouette_iou,adjusted_or_copied_archive,438,0.018239000186371212,0.03481258445238705,0.0067546733729672
+patent_archive,New Pipeline,image,mean_contour_chamfer_norm,adjusted_or_copied_archive,398,0.09784700567606598,0.06700662912969112,0.0766984410378022
+patent_archive,Know3D,image,mean_contour_chamfer_norm,adjusted_or_copied_archive,398,0.09784700567606598,0.06700662912969112,0.0766984410378022
+patent_archive,New Pipeline,image,mean_clip_image_similarity,adjusted_or_copied_archive,438,0.7332109461747331,0.06631831049580512,0.7273983920224556
+patent_archive,Know3D,image,mean_clip_image_similarity,adjusted_or_copied_archive,438,0.7332109461747331,0.06631831049580512,0.7273983920224556
+patent_archive,New Pipeline,image,mean_clip_caption_similarity,adjusted_or_copied_archive,438,0.3529093842235907,0.03351367280657434,0.35306506175231894
+patent_archive,Know3D,image,mean_clip_caption_similarity,adjusted_or_copied_archive,438,0.3529093842235907,0.03351367280657434,0.35306506175231894
+texverse_simulation,Baseline TRELLIS,sample,clip_image,synthetic,438,0.5523611902986328,0.0776924779255338,0.5552719400202228
+texverse_simulation,Baseline TRELLIS,sample,clip_caption,synthetic,438,0.2588326331891962,0.04953654530637307,0.25750745452246077
+texverse_simulation,Baseline TRELLIS,sample,ssim,synthetic,438,0.6570239141953194,0.05966925898231508,0.6579953173678748
+texverse_simulation,Text-guided,sample,clip_image,synthetic,438,0.6254666051331512,0.06989807617776013,0.624154254116077
+texverse_simulation,Text-guided,sample,clip_caption,synthetic,438,0.36859778071932014,0.05858002617313975,0.3684121895137604
+texverse_simulation,Text-guided,sample,ssim,synthetic,438,0.7214760499949554,0.04921174380252887,0.7216737353224902
+texverse_simulation,SAP-Know3D,sample,clip_image,synthetic,438,0.7183539680826099,0.0595964137099847,0.7162869537232152
+texverse_simulation,SAP-Know3D,sample,clip_caption,synthetic,438,0.8107057598032364,0.04154023683722454,0.811630966825412
+texverse_simulation,SAP-Know3D,sample,ssim,synthetic,438,0.7588872173443102,0.039790094797325044,0.7593325803373537

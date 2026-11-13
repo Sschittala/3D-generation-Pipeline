@@ -1,0 +1,54 @@
+% DESCRIPTIVE ARCHIVE / SYNTHETIC DATA ONLY. Not measured comparative evidence.
+% Requires \usepackage{booktabs}.
+\begin{table*}[t]
+\centering
+\small
+\caption{Patent-level summary. Descriptive archive only; adjusted or synthetic scores, not independently measured performance. Values are mean $\pm$ sample SD; n denotes valid units.}
+\begin{tabular}{lll}
+\toprule
+Metric & New Pipeline & Know3D \\
+\midrule
+SSIM $\uparrow$ & 0.6688 $\pm$ 0.1422 (n=50) & 0.6688 $\pm$ 0.1422 (n=50) \\
+PSNR (dB) $\uparrow$ & 11.9105 $\pm$ 2.6989 (n=50) & 11.9105 $\pm$ 2.6989 (n=50) \\
+LPIPS $\downarrow$ & 0.5316 $\pm$ 0.1286 (n=50) & 0.5316 $\pm$ 0.1286 (n=50) \\
+Silhouette IoU $\uparrow$ & 0.0173 $\pm$ 0.0188 (n=50) & 0.0173 $\pm$ 0.0188 (n=50) \\
+Normalized contour Chamfer $\downarrow$ & 0.0890 $\pm$ 0.0327 (n=47) & 0.0890 $\pm$ 0.0327 (n=47) \\
+CLIP image similarity $\uparrow$ & 0.7403 $\pm$ 0.0411 (n=50) & 0.7403 $\pm$ 0.0411 (n=50) \\
+CLIP caption similarity $\uparrow$ & 0.3575 $\pm$ 0.0204 (n=50) & 0.3575 $\pm$ 0.0204 (n=50) \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Image-level summary. Descriptive archive only; adjusted or synthetic scores, not independently measured performance. Values are mean $\pm$ sample SD; n denotes valid units.}
+\begin{tabular}{lll}
+\toprule
+Metric & New Pipeline & Know3D \\
+\midrule
+SSIM $\uparrow$ & 0.7166 $\pm$ 0.1509 (n=438) & 0.7166 $\pm$ 0.1509 (n=438) \\
+PSNR (dB) $\uparrow$ & 12.7109 $\pm$ 4.1520 (n=438) & 12.7109 $\pm$ 4.1520 (n=438) \\
+LPIPS $\downarrow$ & 0.4826 $\pm$ 0.1425 (n=438) & 0.4826 $\pm$ 0.1425 (n=438) \\
+Silhouette IoU $\uparrow$ & 0.0182 $\pm$ 0.0348 (n=438) & 0.0182 $\pm$ 0.0348 (n=438) \\
+Normalized contour Chamfer $\downarrow$ & 0.0978 $\pm$ 0.0670 (n=398) & 0.0978 $\pm$ 0.0670 (n=398) \\
+CLIP image similarity $\uparrow$ & 0.7332 $\pm$ 0.0663 (n=438) & 0.7332 $\pm$ 0.0663 (n=438) \\
+CLIP caption similarity $\uparrow$ & 0.3529 $\pm$ 0.0335 (n=438) & 0.3529 $\pm$ 0.0335 (n=438) \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{TexVerse simulation only. Descriptive archive only; adjusted or synthetic scores, not independently measured performance. Values are mean $\pm$ sample SD; n denotes valid units.}
+\begin{tabular}{llll}
+\toprule
+Simulated pipeline & CLIP image $\uparrow$ & CLIP caption $\uparrow$ & SSIM $\uparrow$ \\
+\midrule
+Baseline TRELLIS & 0.5524 $\pm$ 0.0777 (n=438) & 0.2588 $\pm$ 0.0495 (n=438) & 0.6570 $\pm$ 0.0597 (n=438) \\
+Text-guided & 0.6255 $\pm$ 0.0699 (n=438) & 0.3686 $\pm$ 0.0586 (n=438) & 0.7215 $\pm$ 0.0492 (n=438) \\
+SAP-Know3D & 0.7184 $\pm$ 0.0596 (n=438) & 0.8107 $\pm$ 0.0415 (n=438) & 0.7589 $\pm$ 0.0398 (n=438) \\
+\bottomrule
+\end{tabular}
+\end{table*}

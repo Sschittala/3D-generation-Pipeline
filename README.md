@@ -58,7 +58,20 @@ The existing TexVerse CSV generator uses random synthetic scores, and the Vista
 and Know3D evaluation scripts adjust existing scores. These outputs should be
 interpreted according to those implementations.
 
-## Sketch-to-3D comparison
+## Research table summaries
+
+Run `python3 scripts/build_research_tables.py` to regenerate the descriptive
+archive tables in `reports/tables/` (Markdown, LaTeX, and numeric CSV).
+The main summary weights patents equally and reports mean ± sample SD; a
+separate image-level summary includes valid observation counts. TexVerse's
+simulated scores are isolated in a separate table. The LaTeX requires `booktabs`.
+These are archive summaries, **not independently measured pipeline comparisons**:
+the New Pipeline generator adjusts baseline values, Know3D copies/scales scores,
+and TexVerse generates random scores. Original CSVs are preserved.
+See the generated Markdown for exclusions, missing values, and required inputs
+for a real comparison. `--metrics-dir` and `--output-dir` accept alternative paths.
+
+## Sketch-to-3D experiment
 
 See [experiment setup and current limitations](experiments/sketch_to_3d/README.md)
 for the imported TRELLIS audit and new staged experiment runner.
