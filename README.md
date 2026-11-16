@@ -71,7 +71,15 @@ and TexVerse generates random scores. Original CSVs are preserved.
 See the generated Markdown for exclusions, missing values, and required inputs
 for a real comparison. `--metrics-dir` and `--output-dir` accept alternative paths.
 
-## Archive analysis tables and figures
+## Sketch-input adaptation experiment
+
+See [the Vista run guide](experiments/sketch_adaptation/README.md) for the new
+matched stock/bypass/distance-map/smoothed-map experiment. It includes reviewed
+crop manifests, development/test separation, seeded generation, common-reference
+evaluation, paired patent-level summaries, coverage counts, and a Slurm template.
+CPU controls passed; GPU inference and any claimed gains require Vista validation.
+
+## Archive analysis outputs
 
 Run `python3 scripts/build_project_analysis.py` with NumPy and Matplotlib to
 generate `reports/project_analysis/`: dataset inventory, metric completeness,

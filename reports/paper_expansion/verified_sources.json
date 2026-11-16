@@ -1,0 +1,474 @@
+[
+  {
+    "id": "2412.01506",
+    "title": "Structured 3D Latents for Scalable and Versatile 3D Generation",
+    "authors": [
+      "Jianfeng Xiang",
+      "Zelong Lv",
+      "Sicheng Xu",
+      "Yu Deng",
+      "Ruicheng Wang",
+      "Bowen Zhang",
+      "Dong Chen",
+      "Xin Tong",
+      "Jiaolong Yang"
+    ],
+    "url": "https://arxiv.org/abs/2412.01506"
+  },
+  {
+    "id": "2603.22782",
+    "title": "Know3D: Prompting 3D Generation with Knowledge from Vision-Language Models",
+    "authors": [
+      "Wenyue Chen",
+      "Wenjue Chen",
+      "Peng Li",
+      "Qinghe Wang",
+      "Xu Jia",
+      "Heliang Zheng",
+      "Rongfei Jia",
+      "Yuan Liu",
+      "Ronggang Wang"
+    ],
+    "url": "https://arxiv.org/abs/2603.22782"
+  },
+  {
+    "id": "2405.06461",
+    "title": "SketchDream: Sketch-based Text-to-3D Generation and Editing",
+    "authors": [
+      "Feng-Lin Liu",
+      "Hongbo Fu",
+      "Yu-Kun Lai",
+      "Lin Gao"
+    ],
+    "url": "https://arxiv.org/abs/2405.06461"
+  },
+  {
+    "id": "2006.11239",
+    "title": "Denoising Diffusion Probabilistic Models",
+    "authors": [
+      "Jonathan Ho",
+      "Ajay Jain",
+      "Pieter Abbeel"
+    ],
+    "url": "https://arxiv.org/abs/2006.11239"
+  },
+  {
+    "id": "2010.02502",
+    "title": "Denoising Diffusion Implicit Models",
+    "authors": [
+      "Jiaming Song",
+      "Chenlin Meng",
+      "Stefano Ermon"
+    ],
+    "url": "https://arxiv.org/abs/2010.02502"
+  },
+  {
+    "id": "2112.10752",
+    "title": "High-Resolution Image Synthesis with Latent Diffusion Models",
+    "authors": [
+      "Robin Rombach",
+      "Andreas Blattmann",
+      "Dominik Lorenz",
+      "Patrick Esser",
+      "Björn Ommer"
+    ],
+    "url": "https://arxiv.org/abs/2112.10752"
+  },
+  {
+    "id": "2212.09748",
+    "title": "Scalable Diffusion Models with Transformers",
+    "authors": [
+      "William Peebles",
+      "Saining Xie"
+    ],
+    "url": "https://arxiv.org/abs/2212.09748"
+  },
+  {
+    "id": "2210.02747",
+    "title": "Flow Matching for Generative Modeling",
+    "authors": [
+      "Yaron Lipman",
+      "Ricky T. Q. Chen",
+      "Heli Ben-Hamu",
+      "Maximilian Nickel",
+      "Matt Le"
+    ],
+    "url": "https://arxiv.org/abs/2210.02747"
+  },
+  {
+    "id": "2209.03003",
+    "title": "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow",
+    "authors": [
+      "Xingchao Liu",
+      "Chengyue Gong",
+      "Qiang Liu"
+    ],
+    "url": "https://arxiv.org/abs/2209.03003"
+  },
+  {
+    "id": "2212.08751",
+    "title": "Point-E: A System for Generating 3D Point Clouds from Complex Prompts",
+    "authors": [
+      "Alex Nichol",
+      "Heewoo Jun",
+      "Prafulla Dhariwal",
+      "Pamela Mishkin",
+      "Mark Chen"
+    ],
+    "url": "https://arxiv.org/abs/2212.08751"
+  },
+  {
+    "id": "2305.02463",
+    "title": "Shap-E: Generating Conditional 3D Implicit Functions",
+    "authors": [
+      "Heewoo Jun",
+      "Alex Nichol"
+    ],
+    "url": "https://arxiv.org/abs/2305.02463"
+  },
+  {
+    "id": "2212.08051",
+    "title": "Objaverse: A Universe of Annotated 3D Objects",
+    "authors": [
+      "Matt Deitke",
+      "Dustin Schwenk",
+      "Jordi Salvador",
+      "Luca Weihs",
+      "Oscar Michel",
+      "Eli VanderBilt",
+      "Ludwig Schmidt",
+      "Kiana Ehsani",
+      "Aniruddha Kembhavi",
+      "Ali Farhadi"
+    ],
+    "url": "https://arxiv.org/abs/2212.08051"
+  },
+  {
+    "id": "2307.05663",
+    "title": "Objaverse-XL: A Universe of 10M+ 3D Objects",
+    "authors": [
+      "Matt Deitke",
+      "Ruoshi Liu",
+      "Matthew Wallingford",
+      "Huong Ngo",
+      "Oscar Michel",
+      "Aditya Kusupati",
+      "Alan Fan",
+      "Christian Laforte",
+      "Vikram Voleti",
+      "Samir Yitzhak Gadre",
+      "Eli VanderBilt",
+      "Aniruddha Kembhavi",
+      "Carl Vondrick",
+      "Georgia Gkioxari",
+      "Kiana Ehsani",
+      "Ludwig Schmidt",
+      "Ali Farhadi"
+    ],
+    "url": "https://arxiv.org/abs/2307.05663"
+  },
+  {
+    "id": "1512.03012",
+    "title": "ShapeNet: An Information-Rich 3D Model Repository",
+    "authors": [
+      "Angel X. Chang",
+      "Thomas Funkhouser",
+      "Leonidas Guibas",
+      "Pat Hanrahan",
+      "Qixing Huang",
+      "Zimo Li",
+      "Silvio Savarese",
+      "Manolis Savva",
+      "Shuran Song",
+      "Hao Su",
+      "Jianxiong Xiao",
+      "Li Yi",
+      "Fisher Yu"
+    ],
+    "url": "https://arxiv.org/abs/1512.03012"
+  },
+  {
+    "id": "2501.15074",
+    "title": "PatentLMM: Large Multimodal Model for Generating Descriptions for Patent Figures",
+    "authors": [
+      "Shreya Shukla",
+      "Nakul Sharma",
+      "Manish Gupta",
+      "Anand Mishra"
+    ],
+    "url": "https://arxiv.org/abs/2501.15074"
+  },
+  {
+    "id": "2302.05543",
+    "title": "Adding Conditional Control to Text-to-Image Diffusion Models",
+    "authors": [
+      "Lvmin Zhang",
+      "Anyi Rao",
+      "Maneesh Agrawala"
+    ],
+    "url": "https://arxiv.org/abs/2302.05543"
+  },
+  {
+    "id": "2308.06721",
+    "title": "IP-Adapter: Text Compatible Image Prompt Adapter for Text-to-Image Diffusion Models",
+    "authors": [
+      "Hu Ye",
+      "Jun Zhang",
+      "Sibo Liu",
+      "Xiao Han",
+      "Wei Yang"
+    ],
+    "url": "https://arxiv.org/abs/2308.06721"
+  },
+  {
+    "id": "2304.07193",
+    "title": "DINOv2: Learning Robust Visual Features without Supervision",
+    "authors": [
+      "Maxime Oquab",
+      "Timothée Darcet",
+      "Théo Moutakanni",
+      "Huy Vo",
+      "Marc Szafraniec",
+      "Vasil Khalidov",
+      "Pierre Fernandez",
+      "Daniel Haziza",
+      "Francisco Massa",
+      "Alaaeldin El-Nouby",
+      "Mahmoud Assran",
+      "Nicolas Ballas",
+      "Wojciech Galuba",
+      "Russell Howes",
+      "Po-Yao Huang",
+      "Shang-Wen Li",
+      "Ishan Misra",
+      "Michael Rabbat",
+      "Vasu Sharma",
+      "Gabriel Synnaeve",
+      "Hu Xu",
+      "Hervé Jegou",
+      "Julien Mairal",
+      "Patrick Labatut",
+      "Armand Joulin",
+      "Piotr Bojanowski"
+    ],
+    "url": "https://arxiv.org/abs/2304.07193"
+  },
+  {
+    "id": "2103.00020",
+    "title": "Learning Transferable Visual Models From Natural Language Supervision",
+    "authors": [
+      "Alec Radford",
+      "Jong Wook Kim",
+      "Chris Hallacy",
+      "Aditya Ramesh",
+      "Gabriel Goh",
+      "Sandhini Agarwal",
+      "Girish Sastry",
+      "Amanda Askell",
+      "Pamela Mishkin",
+      "Jack Clark",
+      "Gretchen Krueger",
+      "Ilya Sutskever"
+    ],
+    "url": "https://arxiv.org/abs/2103.00020"
+  },
+  {
+    "id": "1801.03924",
+    "title": "The Unreasonable Effectiveness of Deep Features as a Perceptual Metric",
+    "authors": [
+      "Richard Zhang",
+      "Phillip Isola",
+      "Alexei A. Efros",
+      "Eli Shechtman",
+      "Oliver Wang"
+    ],
+    "url": "https://arxiv.org/abs/1801.03924"
+  },
+  {
+    "id": "2003.08934",
+    "title": "NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis",
+    "authors": [
+      "Ben Mildenhall",
+      "Pratul P. Srinivasan",
+      "Matthew Tancik",
+      "Jonathan T. Barron",
+      "Ravi Ramamoorthi",
+      "Ren Ng"
+    ],
+    "url": "https://arxiv.org/abs/2003.08934"
+  },
+  {
+    "id": "2308.04079",
+    "title": "3D Gaussian Splatting for Real-Time Radiance Field Rendering",
+    "authors": [
+      "Bernhard Kerbl",
+      "Georgios Kopanas",
+      "Thomas Leimkühler",
+      "George Drettakis"
+    ],
+    "url": "https://arxiv.org/abs/2308.04079"
+  },
+  {
+    "id": "2209.14988",
+    "title": "DreamFusion: Text-to-3D using 2D Diffusion",
+    "authors": [
+      "Ben Poole",
+      "Ajay Jain",
+      "Jonathan T. Barron",
+      "Ben Mildenhall"
+    ],
+    "url": "https://arxiv.org/abs/2209.14988"
+  },
+  {
+    "id": "2211.10440",
+    "title": "Magic3D: High-Resolution Text-to-3D Content Creation",
+    "authors": [
+      "Chen-Hsuan Lin",
+      "Jun Gao",
+      "Luming Tang",
+      "Towaki Takikawa",
+      "Xiaohui Zeng",
+      "Xun Huang",
+      "Karsten Kreis",
+      "Sanja Fidler",
+      "Ming-Yu Liu",
+      "Tsung-Yi Lin"
+    ],
+    "url": "https://arxiv.org/abs/2211.10440"
+  },
+  {
+    "id": "2305.16213",
+    "title": "ProlificDreamer: High-Fidelity and Diverse Text-to-3D Generation with Variational Score Distillation",
+    "authors": [
+      "Zhengyi Wang",
+      "Cheng Lu",
+      "Yikai Wang",
+      "Fan Bao",
+      "Chongxuan Li",
+      "Hang Su",
+      "Jun Zhu"
+    ],
+    "url": "https://arxiv.org/abs/2305.16213"
+  },
+  {
+    "id": "2303.11328",
+    "title": "Zero-1-to-3: Zero-shot One Image to 3D Object",
+    "authors": [
+      "Ruoshi Liu",
+      "Rundi Wu",
+      "Basile Van Hoorick",
+      "Pavel Tokmakov",
+      "Sergey Zakharov",
+      "Carl Vondrick"
+    ],
+    "url": "https://arxiv.org/abs/2303.11328"
+  },
+  {
+    "id": "2310.15110",
+    "title": "Zero123++: a Single Image to Consistent Multi-view Diffusion Base Model",
+    "authors": [
+      "Ruoxi Shi",
+      "Hansheng Chen",
+      "Zhuoyang Zhang",
+      "Minghua Liu",
+      "Chao Xu",
+      "Xinyue Wei",
+      "Linghao Chen",
+      "Chong Zeng",
+      "Hao Su"
+    ],
+    "url": "https://arxiv.org/abs/2310.15110"
+  },
+  {
+    "id": "2309.03453",
+    "title": "SyncDreamer: Generating Multiview-consistent Images from a Single-view Image",
+    "authors": [
+      "Yuan Liu",
+      "Cheng Lin",
+      "Zijiao Zeng",
+      "Xiaoxiao Long",
+      "Lingjie Liu",
+      "Taku Komura",
+      "Wenping Wang"
+    ],
+    "url": "https://arxiv.org/abs/2309.03453"
+  },
+  {
+    "id": "2310.15008",
+    "title": "Wonder3D: Single Image to 3D using Cross-Domain Diffusion",
+    "authors": [
+      "Xiaoxiao Long",
+      "Yuan-Chen Guo",
+      "Cheng Lin",
+      "Yuan Liu",
+      "Zhiyang Dou",
+      "Lingjie Liu",
+      "Yuexin Ma",
+      "Song-Hai Zhang",
+      "Marc Habermann",
+      "Christian Theobalt",
+      "Wenping Wang"
+    ],
+    "url": "https://arxiv.org/abs/2310.15008"
+  },
+  {
+    "id": "2308.16512",
+    "title": "MVDream: Multi-view Diffusion for 3D Generation",
+    "authors": [
+      "Yichun Shi",
+      "Peng Wang",
+      "Jianglong Ye",
+      "Mai Long",
+      "Kejie Li",
+      "Xiao Yang"
+    ],
+    "url": "https://arxiv.org/abs/2308.16512"
+  },
+  {
+    "id": "2311.04400",
+    "title": "LRM: Large Reconstruction Model for Single Image to 3D",
+    "authors": [
+      "Yicong Hong",
+      "Kai Zhang",
+      "Jiuxiang Gu",
+      "Sai Bi",
+      "Yang Zhou",
+      "Difan Liu",
+      "Feng Liu",
+      "Kalyan Sunkavalli",
+      "Trung Bui",
+      "Hao Tan"
+    ],
+    "url": "https://arxiv.org/abs/2311.04400"
+  },
+  {
+    "id": "2404.07191",
+    "title": "InstantMesh: Efficient 3D Mesh Generation from a Single Image with Sparse-view Large Reconstruction Models",
+    "authors": [
+      "Jiale Xu",
+      "Weihao Cheng",
+      "Yiming Gao",
+      "Xintao Wang",
+      "Shenghua Gao",
+      "Ying Shan"
+    ],
+    "url": "https://arxiv.org/abs/2404.07191"
+  },
+  {
+    "id": "2403.02151",
+    "title": "TripoSR: Fast 3D Object Reconstruction from a Single Image",
+    "authors": [
+      "Dmitry Tochilkin",
+      "David Pankratz",
+      "Zexiang Liu",
+      "Zixuan Huang",
+      "Adam Letts",
+      "Yangguang Li",
+      "Ding Liang",
+      "Christian Laforte",
+      "Varun Jampani",
+      "Yan-Pei Cao"
+    ],
+    "url": "https://arxiv.org/abs/2403.02151"
+  }
+]

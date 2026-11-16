@@ -1,0 +1,18 @@
+% Requires \usepackage{booktabs}. Single-column table.
+\begin{table}[t]
+\centering
+\small
+\caption{Patent-level evaluation of imported TRELLIS reconstructions on 438 patent drawings from 50 patents. Scores are averaged over eight rendered viewpoints per drawing, then over drawings within each patent. Values report the mean and sample standard deviation across patents. CLIP image similarity compares drawings with renders; CLIP caption similarity compares patent captions with renders. These image-based scores do not directly measure 3D geometric accuracy.}
+\label{tab:trellis-patent-evaluation}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}lr@{}}
+\toprule
+Metric & Mean $\pm$ SD \\
+\midrule
+SSIM $\uparrow$ & $0.6506 \pm 0.1392$ \\
+PSNR (dB) $\uparrow$ & $11.9105 \pm 2.6989$ \\
+LPIPS $\downarrow$ & $0.5316 \pm 0.1286$ \\
+CLIP image similarity $\uparrow$ & $0.7130 \pm 0.0381$ \\
+CLIP caption similarity $\uparrow$ & $0.2408 \pm 0.0197$ \\
+\bottomrule
+\end{tabular*}
+\end{table}
