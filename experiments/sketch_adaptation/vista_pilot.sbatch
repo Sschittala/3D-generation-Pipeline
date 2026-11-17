@@ -1,6 +1,6 @@
 #!/bin/bash -l
 #SBATCH -J sketch-pilot
-#SBATCH -A TG-NAIRR25008
+#SBATCH -A TG-NAIRR250081
 #SBATCH -p gh
 #SBATCH -N 1
 #SBATCH -n 1
@@ -41,6 +41,8 @@ import lpips
 import transformers
 import skimage
 import scipy
+import spconv.pytorch as spconv
+print("Sparse convolution:", spconv.__file__)
 print('Python executable:', sys.executable)
 print('PyTorch:', torch.__version__, 'CUDA runtime:', torch.version.cuda)
 assert torch.cuda.is_available(), 'No CUDA GPU visible'
