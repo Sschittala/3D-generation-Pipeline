@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering\small
+\caption{View-subset diagnostic on our generated reconstruction set (438 drawings, 50 patents). Subsets are fixed before scoring. Values are patent-level means; best SSIM selects a view separately for each drawing. This changes evaluation coverage, not generation.}
+\label{tab:view_subsets}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}lrrr@{}}
+\toprule
+Views & Mean SSIM & Best SSIM & LPIPS \\
+\midrule
+1 & 0.6356 & 0.6356 & 0.5422 \\
+2 & 0.6389 & 0.6496 & 0.5411 \\
+4 & 0.6586 & 0.6998 & 0.5287 \\
+8 & 0.6506 & 0.7026 & 0.5316 \\
+\bottomrule
+\end{tabular*}
+\end{table}

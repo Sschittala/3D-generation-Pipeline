@@ -1,0 +1,40 @@
+\appendix
+\section{Export and Runtime Details}
+\label{app:export}
+
+The original generation scripts load RGB TIFFs and call the pretrained
+image-conditioned pipeline with seed 1. Captions are saved separately, not passed
+into generation. The first mesh and Gaussian output are passed to the standard
+GLB exporter with \texttt{simplify=0.95} and \texttt{texture\_size=1024}; the
+Gaussian is also exported as PLY. The new ablation requires only GLB export and
+holds those export arguments fixed. The simplification argument is reported
+literally rather than asserting a retained-face fraction across software versions.
+
+The historical full-batch script skips existing GLBs. It records 433 generation
+entries for 438 archived meshes; skipped outputs do not acquire fresh records.
+CUDA synchronization brackets the pipeline call, so the timer excludes initial
+model loading, TIFF loading, and later export. Peak PyTorch-allocated memory is
+divided by $1024^3$ (GiB) and includes model allocations. It is not total GPU usage
+or an end-to-end deployment cost. The ablation logs setup, pipeline, and export
+separately; attention backends must be consistent across compared runs.
+
+\section{Preprocessing and Diagnostic Definitions}
+The adaptation preserves aspect ratio on a white canvas, thresholds ink with
+Otsu's rule, and applies an unsigned Euclidean distance transform to non-ink
+pixels. There is no stroke opening or speck deletion in this stage. The Gaussian
+map is quantized to RGB and used only as the generator input. The evaluation
+reference remains the original reviewed crop for all branches.
+
+The separate legacy evaluator thresholds grayscale, chooses polarity from border
+pixels, applies opening and closing with a $3\times3$ kernel, and removes
+components smaller than $\max(16,\lfloor0.0002HW\rfloor)$. A foreground box is
+expanded by eight percent and centered after aspect-preserving resizing. This
+procedure can remove sparse ink. Re-thresholding saved aligned references is a
+diagnostic rather than a reconstruction of the pre-resize mask.
+
+Recomputed mesh connectivity uses native indices. The closed-edge test requires
+two incident triangles per undirected edge and does not test self-intersection
+or every manifold condition. Degenerate triangles use a cross-product norm
+threshold of $10^{-12}$ in native coordinates. These definitions differ from
+vertex-welded or face-connected mesh analyses and should accompany comparisons.
+

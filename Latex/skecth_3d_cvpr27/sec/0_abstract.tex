@@ -1,0 +1,32 @@
+\begin{abstract}
+Pretrained image-conditioned 3D generators offer a practical starting point for
+reconstructing objects from visual observations, but sparse patent drawings
+present a substantially different input domain from natural photographs.
+Thin technical contours, dashed boundaries, annotations, and multiple depicted
+views provide limited appearance information and leave depth and unseen
+geometry ambiguous. In this work, we investigate input-level adaptation of a
+frozen TRELLIS generator to these sparse, black-and-white sketches. Our
+implemented sketch-aware stage constructs deterministic distance-to-ink maps
+that expand the spatial support of technical linework, with optional Gaussian
+smoothing to control the transition around detected strokes. This formulation
+introduces sketch-derived structural cues without retraining the pretrained
+backbone. We implement four matched configurations that separate standard
+image preprocessing, bypassed background removal, distance mapping, and
+smoothing, using shared reviewed crops and paired generation seeds.
+To characterize the reconstruction setting, we use patent TIFF drawings from
+IMPACT to generate 438 three-dimensional reconstructions associated with
+50 patents using pretrained TRELLIS. We assess these generated assets through
+multi-view image comparisons using structural similarity, peak
+signal-to-noise ratio, learned perceptual distance, and CLIP image and caption
+similarity, alongside recomputed mesh statistics and qualitative inspection.
+Scores are aggregated across rendered views, within drawings, and then within
+patents to avoid giving greater weight to patents with more drawings. A
+view-coverage diagnostic examines how the evaluated camera angles affect
+reported similarity, distinguishing favorable projection selection from
+reconstruction quality. Inspection of saved input--render pairs further
+identifies limitations of threshold-based foreground extraction for thin
+linework. The completed measurements establish a descriptive baseline for
+our patent reconstructions and motivate a controlled evaluation of input
+adaptation; comparative adaptation gains remain to be established through
+the matched generation experiments.
+\end{abstract}

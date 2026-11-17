@@ -1,0 +1,44 @@
+\section{Discussion and Limitations}
+\label{sec:discussion}
+
+\paragraph{What the adaptation can establish.}
+The intervention changes the input representation, not the pretrained 3D model.
+Matched comparisons can test whether explicit line support helps a particular
+backbone on reviewed patent crops. They cannot demonstrate a new multiview
+conditioning architecture, hidden-state injection, or successful transfer to an
+unevaluated dataset. The actual maps reveal a tradeoff: retaining thin contours
+also retains dashed marks and stippled shading. These cues may be meaningful in
+a patent but need not correspond to opaque 3D surfaces.
+
+\paragraph{Measurement and coverage.}
+Drawing-to-render metrics conflate structure with appearance and pose.
+A high score may coexist with incorrect depth or disconnected geometry.
+Thresholded ink masks are particularly different from filled rendered silhouettes.
+We therefore withhold silhouette-based accuracy claims and separate complete-case
+quality from generation and evaluation success. Patent-bootstrap intervals
+characterize variation over sampled patents; they do not make a small convenience
+sample representative, nor do they correct for selecting favorable parameters.
+
+\paragraph{Reproducibility and pending evidence.}
+The run manifests preserve crops, parameters, hashes, seeds, and status logs;
+software and checkpoint revisions remain essential to a final comparison.
+The pilot is implemented but has not yielded verified adaptation results in the
+local project. Independent SketchDream and Know3D runs, held-out-patent evaluation,
+and systematic failure selection remain necessary before reporting superiority.
+Historical adjusted or simulated CSVs are excluded from the measured results.
+
+\paragraph{Future evaluation.}
+Further work should evaluate the four configurations on matched development
+patents, examine distance-support and smoothing parameters, and freeze all
+settings before a held-out patent test. Independent external-method runs and
+multiple seeds are needed to assess relative performance and variability.
+The configuration design and prepared inputs are not substitutes for those
+measurements.
+
+\section{Conclusion}
+We formulate a controlled input-adaptation experiment for frozen TRELLIS and
+analyze the patent reconstructions generated in this study. The method separates standard
+preprocessing, background-removal bypass, distance-based line support, and
+smoothing. Current evidence supports the archive characterization and evaluation
+diagnostics; the pending matched experiments must determine whether adaptation
+improves reconstruction agreement and at what computational or structural cost.

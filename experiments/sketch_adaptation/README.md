@@ -188,3 +188,17 @@ python3 sketch_adaptation/run.py generate \
 ```
 
 The log still prints sparse attention as `flash_attn` because that is the routing entry point in TRELLIS, but the runner explicitly announces the adapter override and records its hash. Actual computation is PyTorch SDPA. Use the same backend for every ablation. Memory use and speed may differ from external FlashAttention, so do not combine resource comparisons across backends. Native SDPA may select a fused CUDA kernel or a slower mathematical kernel depending on device, dtype and dimensions. A short pilot is required; success is not guaranteed for an uninspected server-side TRELLIS revision.
+
+## Unattended pilot when interactive queues are busy
+
+`vista_pilot.sbatch` runs the one-seed/four-configuration pilot on `gh`, then evaluates and summarizes it in the same allocation. It restores modules and the existing environment, checks dependencies and CUDA, tests external FlashAttention, and explicitly selects the native SDPA adapter for the entire experiment if the external backend fails. It never installs packages. The configured allocation is TG-NAIRR25008, taken from the user's successful idev submission; change it if Slurm rejects it. The queue may still have a wait; batch submission does not promise faster scheduling.
+
+Copy the updated run.py, results.py, sdpa_compat.py and vista_pilot.sbatch from the Mac to the server's sketch_adaptation directory, then submit on a Vista login node:
+
+```bash
+cd /work/11649/schittala/vista
+sbatch sketch_adaptation/vista_pilot.sbatch
+squeue -u schittala -o "%.18i %.12P %.10T %.10M %.10l %R"
+```
+
+Output is `sketch-pilot-JOBID.out` and `sketch-pilot-JOBID.err` in the submission directory; results are in `sketch_adaptation/runs/batch-pilot-JOBID/analysis/`. You can disconnect after successful submission. Use `tail -n 60 sketch-pilot-JOBID.out` to inspect progress, and `sacct -j JOBID --format=JobID,State,Elapsed,ExitCode` when a job leaves squeue. Job-specific output directories avoid collisions with failed interactive runs. Do not submit a second pilot while this request is pending.

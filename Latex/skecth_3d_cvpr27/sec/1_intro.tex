@@ -1,0 +1,128 @@
+\section{Introduction}
+\label{sec:intro}
+
+Patent drawings encode design information through contours, dashed boundaries,
+sectional views, and annotations. IMPACT~\cite{shomee2024impact} makes design
+patent figures and associated captions available for multimodal analysis, while
+PatentLMM~\cite{shukla2025patentlmm} studies descriptions of technical figures.
+Generating 3D assets from such drawings could support interactive inspection of
+design records. The task is nevertheless ambiguous: visible lines do not uniquely
+determine depth, hidden surfaces, or whether adjacent figures depict one object.
+
+Progress in generative modeling offers a starting point. Denoising diffusion
+models~\cite{ho2020ddpm,song2020ddim} and latent diffusion~\cite{rombach2022ldm}
+provide powerful image priors; diffusion transformers~\cite{peebles2023dit} and
+flow-based approaches~\cite{lipman2023flow,liu2023rectified} offer complementary
+ways to model complex visual distributions. In 3D, DreamFusion and
+Magic3D~\cite{poole2022dreamfusion,lin2023magic3d} transfer image priors through
+rendering, whereas LRM, TripoSR, and InstantMesh~\cite{hong2023lrm,tochilkin2024triposr,xu2024instantmesh}
+learn efficient reconstruction mappings. TRELLIS~\cite{xiang2025trellis} generates
+structured 3D latents that support multiple output representations.
+
+These capabilities do not establish robustness to sparse technical sketches.
+A line drawing provides little of the shading and texture present in an ordinary
+image, and background extraction may remove the very strokes that specify shape.
+SketchDream~\cite{liu2024sketchdream} explicitly addresses sketch and text
+conditioning, while Know3D~\cite{chen2026know3d} uses vision-language knowledge to
+control unseen regions. Their conditioning mechanisms motivate treating visual
+structure and semantic plausibility as separate aspects of patent reconstruction.
+Our approach investigates an input-level intervention on a frozen image-conditioned
+generator rather than adding a language-conditioned generation mechanism.
+
+We implement a sketch adaptation stage that preserves detected linework and
+constructs a soft distance-to-ink representation. A Gaussian-smoothed version
+provides an additional controllable scale of spatial support. Four matched
+configurations separate ordinary TRELLIS preprocessing, bypassed background
+removal, distance-map conditioning, and distance-map conditioning with smoothing.
+All configurations receive the same reviewed crop and seed. The distance map is
+a deterministic proximity field, not a learned boundary probability or a filled
+object silhouette.
+
+Evaluation is equally consequential. CLIP~\cite{radford2021clip} provides semantic
+features, SSIM~\cite{wang2004ssim} measures structural image similarity, and
+LPIPS~\cite{zhang2018lpips} supplies a learned perceptual distance. None alone
+establishes recovery of the true 3D design. Background agreement, pose mismatch,
+and thresholded linework can affect drawing-to-render comparisons. We therefore
+combine image metrics, explicit coverage reporting, mesh measurements, and
+qualitative inspection. Aggregating first within drawings and then within patents
+avoids giving disproportionate weight to patents containing many drawings.
+
+The current evidence comprises an archive of 438 reconstructions generated from patent TIFFs from
+50 patents, a verified subset of saved image calculations, and an implemented
+adaptation experiment whose matched GPU results remain pending. We contribute
+(1) a reproducible distance-based input adaptation with controlled preprocessing
+ablations; (2) a paired evaluation protocol separating seed, drawing, and patent
+aggregation; and (3) an archive analysis identifying practical limitations of
+mask extraction and multi-figure inputs. Quantitative gains from adaptation and
+comparisons with external models must be established by the pending experiments.
+
+\section{Related Work}
+\label{sec:related_work}
+
+\subsection{Generative Priors and Conditioning}
+DDPM~\cite{ho2020ddpm} formulates generation as learned denoising, and
+DDIM~\cite{song2020ddim} provides an alternative sampling process with the same
+training objective. Latent diffusion~\cite{rombach2022ldm} performs synthesis in
+a compressed representation; DiT~\cite{peebles2023dit} studies transformer-based
+diffusion architectures. Flow Matching~\cite{lipman2023flow} learns conditional
+vector fields, while Rectified Flow~\cite{liu2023rectified} encourages straight
+transport paths. These works explain the broader priors available to visual
+synthesis, but are not additional components trained in our pipeline.
+
+ControlNet~\cite{zhang2023controlnet} learns spatial conditioning branches for
+pretrained image diffusion models. IP-Adapter~\cite{ye2023ipadapter} introduces
+image-prompt conditioning through decoupled attention. Our intervention instead
+changes the image representation supplied to an existing 3D generator without
+learning an adapter. CLIP~\cite{radford2021clip} and DINOv2~\cite{oquab2023dinov2}
+illustrate complementary language-supervised and self-supervised visual features;
+semantic similarity in one feature space need not demonstrate geometric fidelity.
+
+\subsection{Representations and 3D Generation}
+NeRF~\cite{mildenhall2020nerf} represents scenes as continuous radiance fields,
+whereas 3D Gaussian Splatting~\cite{kerbl2023gaussians} uses explicit Gaussian
+primitives for efficient rendering. DreamFusion~\cite{poole2022dreamfusion}
+optimizes a 3D representation using a pretrained diffusion prior, and
+Magic3D~\cite{lin2023magic3d} adopts coarse-to-fine optimization culminating in a
+textured mesh. ProlificDreamer~\cite{wang2023prolific} introduces variational score
+distillation to address limitations of score-distillation-based generation.
+
+Point-E~\cite{nichol2022pointe} generates point clouds, while
+Shap-E~\cite{jun2023shape} generates parameters of implicit 3D functions.
+LRM~\cite{hong2023lrm} predicts a radiance-field representation from an image;
+TripoSR~\cite{tochilkin2024triposr} develops a fast feed-forward reconstruction
+system. InstantMesh~\cite{xu2024instantmesh} combines multiview generation with
+sparse-view reconstruction. TRELLIS~\cite{xiang2025trellis} uses structured
+latents that can be decoded into meshes, Gaussians, or radiance fields; it is the
+backbone used here. Differences in representation and export require common
+rendering and accounting before comparing these systems quantitatively.
+
+\subsection{Multiview and Sketch Control}
+Zero-1-to-3~\cite{liu2023zero123} conditions novel-view synthesis on relative
+camera changes. Zero123++~\cite{shi2023zero123pp} generates consistent multiview
+images from one image, and SyncDreamer~\cite{liu2023syncdreamer} coordinates
+multiview diffusion. Wonder3D~\cite{long2023wonder3d} jointly generates multiview
+normal and color information. MVDream~\cite{shi2023mvdream} learns a multiview
+prior from text and 3D data. These methods distinguish controlled view synthesis
+from merely rendering a completed mesh at several evaluation angles.
+
+SketchDream~\cite{liu2024sketchdream} combines sketches, text, depth guidance,
+and multiview attention for generation and editing. Know3D~\cite{chen2026know3d}
+uses latent hidden-state injection to transfer vision-language knowledge into
+unseen-region generation. We discuss them as relevant comparison methods, but
+have no independently measured benchmark results for either in the current
+archive. Our implemented adaptation does not claim their conditioning mechanisms.
+
+\subsection{Data and Reconstruction Assessment}
+ShapeNet~\cite{chang2015shapenet}, Objaverse~\cite{deitke2023objaverse}, and
+Objaverse-XL~\cite{deitke2023objaversexl} provide large collections of 3D assets.
+In contrast, IMPACT~\cite{shomee2024impact} supplies patent figures and captions,
+not the ground-truth meshes required for direct geometric reconstruction error.
+PatentLMM~\cite{shukla2025patentlmm} further emphasizes technical-figure language
+understanding, a related but distinct task.
+
+SSIM~\cite{wang2004ssim}, LPIPS~\cite{zhang2018lpips}, and
+CLIP~\cite{radford2021clip} measure different kinds of image agreement. Their
+use with sparse drawings requires attention to framing, white backgrounds,
+annotations, and pose. We retain these complementary measures and report mask
+and mesh diagnostics separately, rather than interpreting semantic alignment as
+a substitute for geometric ground truth.
